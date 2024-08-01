@@ -27,6 +27,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  color: #000;
 }
 
 h1 {
@@ -84,33 +85,112 @@ button:focus-visible {
 .layout {
   display: grid;
   width: 100%;
-  height: 100%;
   gap: 16px;
-  grid-template-rows: 1fr 3fr 2fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   margin: 15px 20px;
 }
 .about-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  /* grid-template-columns: 1fr 1fr 2fr; */
   gap: 16px;
 }
 
-.about-section-item {
-  height: 124px;
+.section-item {
   border: 1px solid #333;
+  border-radius: 12px;
+  padding: 12px;
+  background-color: #F0F0F0;
+}
+.section-item.photo {
+  padding: 0px;
+}
+
+.photo {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.name {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.languages {
+  grid-column: 3 / 5;
+  grid-row: 1 / 2;
+}
+
+.expirience {
+  grid-column: 1 / 4;
+  grid-row: 2 / 5;
+}
+
+.tools {
+  grid-column: 4 / 5;
+  grid-row: 2 / 5;
+}
+
+.education {
+  grid-column: 1 / 3;
+  grid-row: 5 / 7;
+}
+
+.interests {
+  grid-column: 3 / 5;
+  grid-row: 5 / 7;
 }
 
 .expirience-section {
   display: grid;
-  grid-template-columns: 3fr 1fr;
   gap: 16px;
+}
+
+.name-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.name-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.photo-item img {
+  height: 100%;
+  width: 100%;
+}
+
+h3 {
+  margin: 0px;
+  padding-bottom: 16px;
+}
+
+.languages-item__skills__bar {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 8px;
+  margin-top: 5px;
+}
+
+.level {
+  height: 100%;
+  background-color: #28a745;
+  border-radius: 10px 0 0 10px;
 }
 
 .education-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+
+.languages-item__skills__item {
+  display: flex;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
