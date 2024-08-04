@@ -3,36 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- jsPDF library -->
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+    <!-- jsPDF HTML plugin -->
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/jsPDF.html.min.js"></script> -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <!-- <div id="app"></div> -->
     <script type="module" src="./js/main.js"></script>
-    <div class="layout">
+    <button id="downloadPDF">Скачать PDF</button>
+    <div class="resume">
       <!-- <section> -->
         <!-- <div class="about-section"> -->
           <div class="section-item photo">
             <div class="photo-item">
-              <img src="/public/profileImg.png" alt="Фото из резюме">
+              <img src="profileImg.png" alt="Фото из резюме">
             </div>
           </div>
           <div class="section-item name">
+            <div class="ripple-wrapper"></div>
+            <div class="section-item__buttons edit ">
+              <span class="section-item__button edit-icon">&#9998;</span>
+            </div>
+            <div class="section-item__buttons save cancel">
+              <span class="section-item__button save-icon">&#128190;</span>
+              <span class="section-item__button cancel-icon">&#10060;</sp>
+            </div>
             <div class="name-item">
-              <span class="name-item__greeatings">Hello 👋🏻 I’m</span>
+              <span class="name-item__greeatings editable">Hello 👋🏻 I’m</span>
               <div class="name-item__info">
-                <span>Karthik SR</span>
-                <span>UX/UI Designer</span>
+                <span class="editable">Karthik SR</span>
+                <span class="editable">UX/UI Designer</span>
               </div>
             </div>
           </div>
           <div class="section-item languages">
+            <div class="ripple-wrapper"></div>
+            <div class="section-item__buttons edit">
+              <span class="section-item__button edit-icon">&#9998;</span>
+            </div>
+            <div class="section-item__buttons save cancel">
+              <span class="section-item__button save-icon">&#128190;</span>
+              <span class="section-item__button cancel-icon">&#10060;</sp>
+            </div>
             <div class="languages-item">
-              <h3>Languages</h3>
+              <h3 class="editable">Languages</h3>
 
               <div class="languages-item__skills">
                 <div class="languages-item__skills__item">
-                  <span>English</span>
+                  <span class="editable">English</span>
                   <div class="languages-item__skills__bar">
                     <div class="level"></div>
                   </div>
@@ -40,7 +62,7 @@
 
                 <div class="languages-item__skills__item">
                   <div class="languages-item__skills__name">
-                    <span>English</span>
+                    <span class="editable">English</span>
                   </div>
                   <div class="languages-item__skills__bar">
                     <div class="level"></div>
@@ -49,7 +71,7 @@
 
                 <div class="languages-item__skills__item">
                   <div class="languages-item__skills__name">
-                    <span>English</span>
+                    <span class="editable">English</span>
                   </div>
                   <div class="languages-item__skills__bar">
                     <div class="level"></div>
@@ -63,59 +85,65 @@
       <!-- <section> -->
         <!-- <div class="expirience-section"> -->
           <div class="section-item expirience">
+            <div class="ripple-wrapper"></div>
+            <div class="section-item__buttons edit">
+              <span class="section-item__button edit-icon">&#9998;</span>
+            </div>
+            <div class="section-item__buttons save cancel">
+              <span class="section-item__button save-icon">&#128190;</span>
+              <span class="section-item__button cancel-icon">&#10060;</sp>
+            </div>
             <div class="expirience-item">
-              <h3>Expirience</h3>
+              <h3 class="editable">Expirience</h3>
 
               <div class="expirience-block default_block recent">
                 <div class="expirience-block__period">
-                  <span class="expirience-block__period__duration">Jun. 2023 - Present</span>
+                  <span class="expirience-block__period__duration editable">Jun. 2023 - Present</span>
                   <div class="expirience-block__period__recent">most recent</div>
                 </div>
                 <div class="expirience-block__description">
                   <div class="expirience-block__description__profession">
-                    <span class="expirience-block__description__profession_title">Marketing Manager</span>
-                    <span class="expirience-block__description__profession_format">Pankayam | Full-time</span>
+                    <span class="expirience-block__description__profession_title editable">Marketing Manager</span>
+                    <span class="expirience-block__description__profession_format editable">Pankayam | Full-time</span>
                   </div>
                   <div class="expirience-block__description__responsibilities">
-                    <span>Strategy development and planning of campaigns that promote the business and generate genuine traffic</span>
+                    <span class="editable">Strategy development and planning of campaigns that promote the business and generate genuine traffic</span>
                     </br>
-                    <span>SEO Content Creation for Blogs, Website, Social media</span>
+                    <span class="editable">SEO Content Creation for Blogs, Website, Social media</span>
                   </div>
                 </div>
               </div>
 
             <div class="expirience-block default_block">
               <div class="expirience-block__period">
-                <span class="expirience-block__period__duration">Jun. 2023 - Present</span>
-                <div class="expirience-block__period__recent">most recent</div>
+                <span class="expirience-block__period__duration editable">Jun. 2023 - Present</span>
               </div>
               <div class="expirience-block__description">
                 <div class="expirience-block__description__profession">
-                  <span class="expirience-block__description__profession_title">Marketing Manager</span>
-                  <span class="expirience-block__description__profession_format">Pankayam | Full-time</span>
+                  <span class="expirience-block__description__profession_title editable">Marketing Manager</span>
+                  <span class="expirience-block__description__profession_format editable">Pankayam | Full-time</span>
                 </div>
-                <div class="expirience-block__description__responsibilities">
-                  <span>Strategy development and planning of campaigns that promote the business and generate genuine traffic</span>
+                <div class="expirience-block__description__responsibilities editable">
+                  <span class="editable">Strategy development and planning of campaigns that promote the business and generate genuine traffic</span>
                   </br>
-                  <span>SEO Content Creation for Blogs, Website, Social media</span>
+                  <span class="editable">SEO Content Creation for Blogs, Website, Social media</span>
                 </div>
               </div>
             </div>
 
             <div class="expirience-block default_block">
               <div class="expirience-block__period">
-                <span class="expirience-block__period__duration">Jun. 2023 - Present</span>
-                <div class="expirience-block__period__recent">most recent</div>
+                <span class="expirience-block__period__duration editable">Jun. 2023 - Present</span>
               </div>
               <div class="expirience-block__description">
                 <div class="expirience-block__description__profession">
-                  <span class="expirience-block__description__profession_title">Marketing Manager</span>
-                  <span class="expirience-block__description__profession_format">Pankayam | Full-time</span>
+                  <span class="expirience-block__description__profession_title editable">Marketing Manager</span>
+                  <span class="expirience-block__description__profession_format editable">Pankayam | Full-time</span>
                 </div>
-                <div class="expirience-block__description__responsibilities">
-                  <span>Strategy development and planning of campaigns that promote the business and generate genuine traffic</span>
+                <div class="expirience-block__description__responsibilities editable">
+                  <span class="editable">Strategy development and planning of campaigns that promote the business and generate genuine traffic</span>
                   </br>
-                  <span>SEO Content Creation for Blogs, Website, Social media</span>
+                  <span class="editable">SEO Content Creation for Blogs, Website, Social media</span>
                 </div>
               </div>
             </div>
@@ -124,11 +152,19 @@
 
           </div>
           <div class="section-item tools">
+            <div class="ripple-wrapper"></div>
+            <div class="section-item__buttons edit">
+              <span class="section-item__button edit-icon">&#9998;</span>
+            </div>
+            <div class="section-item__buttons save cancel">
+              <span class="section-item__button save-icon">&#128190;</span>
+              <span class="section-item__button cancel-icon">&#10060;</sp>
+            </div>
             <div class="tools-item">
-              <h3>Tools</h3>
+              <h3 class="editable">Tools</h3>
               <div class="tools-block">
                 <div class="tools-block__crumb">
-                  <span class="tools-block__crumb-item">design</span>
+                  <span class="tools-block__crumb-item editable">design</span>
                 </div>
                 <div class="tools-block__icons">
                   <div class="tools-block__icon">
@@ -158,45 +194,60 @@
       <!-- <section> -->
         <!-- <div class="education-section"> -->
           <div class="section-item education">
+            <div class="ripple-wrapper"></div>
+            <div class="section-item__buttons edit">
+              <span class="section-item__button edit-icon">&#9998;</span>
+            </div>
+            <div class="section-item__buttons save cancel">
+              <span class="section-item__button save-icon">&#128190;</span>
+              <span class="section-item__button cancel-icon">&#10060;</sp>
+            </div>
             <div class="education-item">
-              <h3>Tools</h3>
+              <h3 class="editable">Tools</h3>
               <div class="education-item-wrapper">
                 <div class="education-block default_block recent">
                   <div class="education-block__period">
-                    <span class="education-block__period__duration">2017 - 2022</span>
+                    <span class="education-block__period__duration editable">2017 - 2022</span>
                     <div class="education-block__period__recent">most recent</div>
                   </div>
                   <div class="education-block__tags">
                     <div class="education-block__description__profession">
-                      <span class="education-block__description__profession_title">UI/UX</span>
-                      <span class="education-block__description__profession_tags">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</span>
+                      <span class="education-block__description__profession_title editable">UI/UX</span>
+                      <span class="education-block__description__profession_tags editable">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</span>
                     </div>
+                  </div>
+                  <div class="education-block__place">
+                    <span class="education-block__description__profession_tags editable">Coursera</span>
                   </div>
                 </div>
 
-                <div class="education-block default_block recent">
+                <div class="education-block default_block">
                   <div class="education-block__period">
-                    <span class="education-block__period__duration">2017 - 2022</span>
-                    <div class="education-block__period__recent">most recent</div>
+                    <span class="education-block__period__duration editable">2017 - 2022</span>
                   </div>
                   <div class="education-block__tags">
                     <div class="education-block__description__profession">
-                      <span class="education-block__description__profession_title">UI/UX</span>
-                      <span class="education-block__description__profession_tags">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</span>
+                      <span class="education-block__description__profession_title editable">UI/UX</span>
+                      <span class="education-block__description__profession_tags editable">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</span>
                     </div>
+                  </div>
+                  <div class="education-block__place">
+                      <span class="education-block__description__profession_tags editable">Coursera</span>
                   </div>
                 </div>
 
-                <div class="education-block default_block recent">
+                <div class="education-block default_block">
                   <div class="education-block__period">
-                    <span class="education-block__period__duration">2017 - 2022</span>
-                    <div class="education-block__period__recent">most recent</div>
+                    <span class="education-block__period__duration editable">2017 - 2022</span>
                   </div>
                   <div class="education-block__tags">
                     <div class="education-block__description__profession">
-                      <span class="education-block__description__profession_title">UI/UX</span>
-                      <span class="education-block__description__profession_tags">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</span>
+                      <span class="education-block__description__profession_title editable">UI/UX</span>
+                      <span class="education-block__description__profession_tags editable">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</span>
                     </div>
+                  </div>
+                  <div class="education-block__place">
+                    <span class="education-block__description__profession_tags editable">Coursera</span>
                   </div>
                 </div>
               </div>
@@ -204,8 +255,48 @@
 
 
           </div>
-          <div class="section-item interests">
+          <div class="about">
+            <div class="section-item interests">
+              <div class="ripple-wrapper"></div>
+              <div class="section-item__buttons edit">
+                <span class="section-item__button edit-icon">&#9998;</span>
+              </div>
+              <div class="section-item__buttons save cancel">
+                <span class="section-item__button save-icon">&#128190;</span>
+                <span class="section-item__button cancel-icon">&#10060;</sp>
+              </div>
+              <div class="interests-item">
+                <h3 class="editable">Interests</h3>
+                
+                <div class="interests_items">
+                  <span class="interests_item editable">branding</span>
+                  <span class="interests_item editable">design</span>
+                  <span class="interests_item editable">photography</span>
+                  <span class="interests_item editable">artificial intelligence</span>
+                  <span class="interests_item editable">illustration</span>
+                  <span class="interests_item editable">typography</span>
+                  <span class="interests_item editable">social networks</span>
+                  <span class="interests_item editable">research</span>
+                  <span class="interests_item editable">dron pilot</span>
+                  <span class="interests_item editable">games</span>
+                </div>
+              </div>
+            </div>
 
+            <div class="section-item chat dark">
+              <div class="ripple-wrapper"></div>
+              <div class="section-item__buttons edit">
+                <span class="section-item__button edit-icon">&#9998;</span>
+              </div>
+              <div class="section-item__buttons save cancel">
+                <span class="section-item__button save-icon">&#128190;</span>
+                <span class="section-item__button cancel-icon">&#10060;</sp>
+              </div>
+              <div class="chat-item">
+                <h3 class="editable">Let´s chat! I´m ready to work on excinting projects</h3>
+                <span class="editable">srkarthik.designscape@gmail.com</span>
+              </div>
+            </div>
           </div>
         <!-- </div> -->
       <!-- </section> -->

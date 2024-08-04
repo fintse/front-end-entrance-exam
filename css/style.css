@@ -23,8 +23,11 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 20px auto;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
   color: #000;
@@ -76,32 +79,27 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border-color: #007bff;
 }
 
-.layout {
+.resume {
   display: grid;
-  width: 100%;
-  gap: 16px;
+  gap: 20px;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  margin: 15px 20px;
+  margin: 20px;
+  max-width: 1000px;
 }
 .about-section {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 2fr; */
-  gap: 16px;
+  gap: 20px;
 }
 
-.section-item {
-  border-radius: 12px;
-  padding: 12px;
-  background-color: #F0F0F0;
+.section-item.dark {
+  background-color: #000;
+  color: #fff;
 }
+
 .section-item.photo {
   padding: 0px;
 }
@@ -109,12 +107,10 @@ button:focus-visible {
 .photo {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  aspect-ratio: 1 / 1;
 }
 .name {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  aspect-ratio: 1 / 1;
 }
 
 .languages {
@@ -125,8 +121,6 @@ button:focus-visible {
 .expirience {
   grid-column: 1 / 4;
   grid-row: 2 / 5;
-  aspect-ratio: 1 / 1;
-
 }
 
 .tools {
@@ -137,13 +131,23 @@ button:focus-visible {
 .education {
   grid-column: 1 / 3;
   grid-row: 5 / 7;
-  aspect-ratio: 1 / 1;
 }
 
 .interests {
+  display: flex;
+  flex: auto;
+}
+
+.chat { 
+  height: 28%;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   grid-column: 3 / 5;
   grid-row: 5 / 7;
-  aspect-ratio: 1 / 1;
 }
 
 .expirience-section {
@@ -171,7 +175,7 @@ button:focus-visible {
 
 h3 {
   margin: 0px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .languages-item__skills__bar {
@@ -285,6 +289,9 @@ h3 {
 }
 
 .education-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   border-radius: 10px;
 }
 
@@ -301,6 +308,153 @@ h3 {
 
 .education-block__description__profession_title {
   font-weight: 600;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+
+.interests_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.interests_item {
+  border-radius: 40px;
+  background-color: #fff;
+  padding: 4px 10px;
+}
+
+.chat-item h3 {
+  margin-bottom: 12px;
+}
+
+.section-item {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.edit-icon, .cancel-icon, .save-icon {
+  cursor: pointer;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.section-item__buttons.edit.visible, .section-item__buttons.save.visible {
+  opacity: 1;
+  display: flex;
+  visibility: visible;
+
+}
+
+.section-item__buttons.edit.hidden, .section-item__buttons.save.hidden {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+
+.section-item:hover {
+  background-color: #eef4ff;
+}
+
+.dark.section-item:hover {
+  background-color: #242424;
+}
+
+.section-item:hover .section-item__buttons.edit {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+}
+
+.section-item:hover .section-item__buttons.edit.hidden{
+  visibility: hidden;
+}
+
+.editable {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.editable.editing {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 1);
+}
+.recent .editable.editing, .dark .editable.editing, .tools-block__crumb-item.editable.editing {
+  color: #000;
+}
+
+.section-item__buttons {
+  border: 1px solid #007bff;
+  border-radius: 8px;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  display: flex;
+  transform: translate(0, -50%);
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+
+.section-item__button {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.save-icon + .cancel-icon {
+  border-left: 1px solid #007bff;
+}
+
+.ripple-wrapper {
+  pointer-events: none;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.ripple {
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple.green {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.ripple.red {
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
 @media (prefers-color-scheme: light) {
