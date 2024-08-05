@@ -108,7 +108,6 @@ button:hover {
 .education-section {
   display: grid;
   gap: 20px;
-  /* grid-template-rows: 2fr; */
 }
 
 .section-item.dark {
@@ -121,35 +120,6 @@ button:hover {
   display: flex;
   overflow: hidden;
 }
-
-/* .photo {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-.name {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-}
-
-.languages {
-  grid-column: 3 / 5;
-  grid-row: 1 / 2;
-}
-
-.expirience {
-  grid-column: 1 / 4;
-  grid-row: 2 / 5;
-}
-
-.tools {
-  grid-column: 4 / 5;
-  grid-row: 2 / 5;
-}
-
-.education {
-  grid-column: 1 / 3;
-  grid-row: 5 / 7;
-} */
 
 .interests {
   display: flex;
@@ -191,7 +161,6 @@ button:hover {
   justify-content: center;
   padding: 0;
   background-color: none;
-  border-radius: 12px;
   overflow: hidden;
   width: 100%;
   flex-grow: 1;
@@ -250,6 +219,12 @@ h3 {
   color: #5C5C5C;
 }
 
+.languages-item__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .languages-item__skills__bar {
   border-radius: 3px;
   overflow: hidden;
@@ -272,6 +247,10 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 16px;
+}
+
+.languages-item__skills__item span {
+  width: 30%;
 }
 
 .expirience-block {
@@ -459,6 +438,7 @@ h3 {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   border-radius: 4px;
   width: fit-content;
+  word-break: break-all;
 }
 
 .editable.editing {
@@ -577,7 +557,7 @@ h3 {
 
   .about-section {
     display: grid;
-    gap: 16px;
+    gap: 20px;
     /* grid-template-rows: 1fr 1fr; */
     grid-template-columns: 1fr;
   }
@@ -590,9 +570,8 @@ h3 {
   }
   
   .education-section {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .education {

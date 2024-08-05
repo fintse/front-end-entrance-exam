@@ -1,5 +1,4 @@
 import "../css/style.css";
-// import 'jspdf/dist/jspdf.plugin.html2pdf';
 import html2pdf from 'html2pdf.js';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -105,22 +104,18 @@ document.addEventListener('DOMContentLoaded', function () {
   const button = document.getElementById('downloadPDF');
 
   button.addEventListener('click', function (event) {
-    // Удаление предыдущих риппл элементов
     const existingRipples = button.querySelectorAll('.ripple');
     existingRipples.forEach(ripple => ripple.remove());
 
-    // Создание риппл элемента
     const ripple = document.createElement('span');
     ripple.classList.add('ripple');
 
-    // Вычисление размеров и положения риппл элемента
     const rect = button.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     ripple.style.width = ripple.style.height = `${size}px`;
     ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
     ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
 
-    // Добавление риппл элемента на кнопку
     button.appendChild(ripple);
   });
 });
